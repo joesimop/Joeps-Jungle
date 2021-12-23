@@ -1,0 +1,43 @@
+﻿<div class="card h-100" @attributes="InputAttributes">
+
+
+    <div class="card-header bg-white">
+        <h5>
+            @if (CustomTitle == null)
+            {
+                @Title
+            }
+            else
+            {
+                @CustomTitle
+            }
+        </h5>
+    </div>
+
+    @if (Content is not null)
+    {
+
+
+        @if (RemovePadding)
+        {
+            @Content
+
+        }
+        else
+        {
+            <div class="card-body @CardClass">
+                @Content
+            </div>
+
+        }
+    }
+
+    @if (Footer is not null)
+    {
+        <div class="card-footer @FooterClass">
+            @Footer
+        </div>
+    }
+
+
+</div>

@@ -1,0 +1,19 @@
+﻿<div class="project-border mb-3">
+    <Accordion Id="@Id">
+        <Trigger>
+            @Title
+        </Trigger>
+        <Extra>
+            @if (HasGithub)
+            {
+                <a href="@GitLink" class="fa fa-github fa-2x text-accent float-end"></a>
+            }
+        </Extra>
+    </Accordion>
+
+
+    <AccordionContent Id="@Id">
+        @Description
+    </AccordionContent>
+</div>
+

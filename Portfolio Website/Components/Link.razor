@@ -1,0 +1,9 @@
+﻿<a class="link" @attributes="InputAttributes">@Text</a>
+
+@code {
+
+    [Parameter] public string Text { get; set; } = string.Empty!;
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object> InputAttributes{ get; set; }
+    }

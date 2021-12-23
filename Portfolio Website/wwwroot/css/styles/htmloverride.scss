@@ -1,0 +1,108 @@
+﻿@import "./definitions";
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: $font-header;
+}
+
+body {
+    background-color: $white;
+    color: $black;
+    border-radius: 25rem !important;
+}
+
+p {
+    background-color: inherit;
+    color: inherit;
+}
+
+h1 {
+    font-family: $font-header;
+    font-weight: bold;
+    font-size: 4rem;
+    margin-bottom: 0;
+    font-style: italic;
+    
+}
+
+h2 {
+    font-family: $font-header;
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.h2 {
+    font-family: $font-header;
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+h3 {
+    font-family: $font-header;
+    font-weight: bold;
+    font-size: 1.25rem;
+    font-style: italic;
+}
+
+.h3 {
+    font-family: $font-header;
+    font-weight: bold;
+    font-size: 1.25rem;
+    font-style: italic;
+}
+
+h4 {
+    font-size: 2rem;
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+a, ul, li {
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+a:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+a.active:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    text-decoration: none;
+    border-radius: 5px;
+    color: $accent;
+    transition: transform 0.25s ease-out;
+}
+
+button {
+    color: inherit;
+    background-color: inherit;
+    border: none;
+    font: inherit;
+    outline: none;
+    text-decoration: none;
+}
+
+button:focus {
+    outline: 0;
+    text-decoration: none;
+    border: none;
+}
+
+img {
+    height: inherit;
+    width: 100%;
+    border-radius: 2rem;
+    object-fit: contain;
+    animation: fadeInDown 800ms ease-out both;
+}
+
+i{
+    color: $primary;
+}

@@ -1,0 +1,26 @@
+﻿[
+  {
+    "outputFile": "wwwroot/css/styles/compiled/definitions.css",
+    "inputFile": "wwwroot/css/styles/definitions.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/styles/compiled/master.css",
+    "inputFile": "wwwroot/css/styles/master.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/styles/compiled/bootstrapoverride.css",
+    "inputFile": "wwwroot/css/styles/bootstrapoverride.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/styles/compiled/htmloverride.css",
+    "inputFile": "wwwroot/css/styles/htmloverride.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/styles/compiled/animations.css",
+    "inputFile": "wwwroot/css/styles/animations.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/styles/compiled/general.css",
+    "inputFile": "wwwroot/css/styles/general.scss"
+  }
+]

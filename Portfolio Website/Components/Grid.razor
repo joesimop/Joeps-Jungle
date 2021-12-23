@@ -1,0 +1,17 @@
+﻿@typeparam TItem
+
+
+<div class="row row-cols-1 row-cols-lg-2 row-cols-xxl-@MaxItemsPerRow @(Gutters ? "g-5" : "")">
+
+    @for (int column = 0; column < this.NumberOfItems; column++)
+    {
+
+        @if (CoordinateContent is not null)
+        {
+            <div class="col list-group-item">
+                @CoordinateContent(DataSource.ElementAt(column))
+            </div>
+        }
+    }
+
+</div>

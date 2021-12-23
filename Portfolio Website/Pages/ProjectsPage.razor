@@ -1,0 +1,28 @@
+﻿@page "/projects"
+
+<PageHeader Title="Projects" SubTitle="A place to view the projects I'm most proud of." />
+
+<Project Title="Portfolio Website">
+    <Description>
+        Using Blazor, C#, and ASP.NET Core 3, I developed my site for three reasons. One, employers will better understand who I am. Two, my parents have a way to interface with me every day, via my 
+        <NavLink class="link in-text-link" href="/running">running</NavLink> page. And three, I wanted to challenge myself to a project. I learned so much and am excited to continue building the site.
+    </Description>
+</Project>
+
+<Project Title="Hash Table  in C">
+    <Description>
+        As a part of my CPE 357 class, I created an effectivley object oriented implementation of a Hash Table in C. By using dynamic memory allocation and custom structs, the Hash Table uses separate chaining to store data. On creation of the Hash Table, the user has the ability to input their own functions in the case they need custom allocation, deallocation, or hashing for their structs. I provide basic versions of the aformentioned methods for them otherwise.
+    </Description>
+</Project>
+
+<Project Title="Frequency Band Analyzer">
+    <Description>
+        Using an ESP32, a MSGEQ7 (frequency analyzer), FastLED (LED Strip Interface Library) and some C++ code, I wrote a RGB LED Animation Framework that reacts to music. The Animation class takes an array of LED strips as inputs, along-side other reactivity variables, and dynamically animates separate LED strips, to music, on the fly. I will get a video of them working soon, currently cleaning up the code and structure of the program.
+    </Description>
+</Project>
+
+<Project Title="LZW Compression in C">
+    <Description>
+        Using bit-packing, a trie data structure, and clever table creation invented by Lempel, Ziv, and Welch, (hence LZW!), this project allowed for an optimized LZW Compression algorithm. In order to do that, bit packing was used for close to maximum data compression and a trie data structure allowed for maximum speed of table manipulation. Due to the nature of LZW, there would be a lot of lookups and insertions happening in the table so minimizing the time it took to undergo those tasks was key, which was achieved through the trie struct. On top of this, we were allocating memory to the heap that we needed to keep track of. Awesome project.
+    </Description>
+</Project>

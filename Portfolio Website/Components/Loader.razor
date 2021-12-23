@@ -1,0 +1,16 @@
+﻿@if (DataState == LoadState.Loading)
+{
+    <div class="text-center m-3">
+        <div class="loader"></div>
+    </div>
+}
+else
+{
+    @ChildContent
+}
+
+@code {
+    [Parameter] public RenderFragment ChildContent { get; set; }
+
+    [Parameter] public LoadState DataState { get; set; } = LoadState.Loading;
+}

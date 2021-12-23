@@ -1,0 +1,24 @@
+﻿@page "/running"
+
+<PageHeader Title="Strava Posts" SubTitle="A place to keep track of my running using the Strava API!" />
+
+<div class="z-index-offcanvas">
+    <div class="offcanvas offcanvas-bottom rounded" tabindex="-1" id="DetailedRun">
+        <DetailedStravaView @ref=DetailedStravaView Activity="DetailedActivity"/>
+    </div>
+</div>
+
+<Grid DataSource="activities" TItem="StravaActivity" Gutters MaxItemsPerRow="3">
+    <CoordinateContent>
+        <ShortStravaActivity Activity="@context" OnClickCallback="() => SetDetailedActivity(context)" />
+    </CoordinateContent>
+</Grid>
+
+<Loader DataState="DataState">
+    <div class="mt-3 text-center">
+        <button class="btn inverse-colors fw-bold" type="button" @onclick="GetActivities">
+            Load More
+        </button>
+    </div>
+</Loader>
+

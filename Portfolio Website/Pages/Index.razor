@@ -1,7 +1,25 @@
 ﻿@page "/"
 
-<h1>Hello, world!</h1>
+<Split VerticallyAlign LeftColSize="7">
+    <Left>
+        <h1 class="text-dark mb-4">Hey, name's Joe.</h1>
+        <p>
+            I'm a full-stack developer studying Computer Science at Cal Poly. 
+            Please be nice to bugs, they never did anything to you. 
+            This website as a place to document my 
+            <NavLink class="link in-text-link" href="/projects">projects</NavLink>, 
+            analyze my 
+            <NavLink class="link in-text-link" href="/running">running</NavLink>, 
+            and evaulate 
+            <NavLink class="link in-text-link" href="/music">music</NavLink>!
+        </p>
 
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+        <p class="text-accent italicized">
+            Note, this site is in perpetual development. I try to maintain it's apparent completeness, though
+            is may not look so at times.
+        </p>
+    </Left>
+    <Right>
+        <img src="images/profileCircleCropped.jpg" class="circle-border" style="max-height: 20rem;">
+    </Right>
+</Split>

@@ -1,0 +1,19 @@
+﻿<div class="row @(TextCenter ? "text-center" : "")  @(VerticallyAlign ? "align-items-center" : "")" style="@(MinHeight == string.Empty ? "" : "min-height: " + MinHeight + "px")">
+    <div class="col-md-@LeftColSize.ToString()">
+        @Left
+    </div>
+    
+    <div class="col-md-@RightColSize.ToString()">
+        @Right
+    </div>
+</div>
+
+@code{
+    [Parameter] public RenderFragment Left { get; set; } = default!;
+    [Parameter] public RenderFragment Right { get; set; } = default!;
+    [Parameter] public string MinHeight { get; set; } = string.Empty!;
+    [Parameter] public bool TextCenter { get; set; }
+    [Parameter] public bool VerticallyAlign { get; set; }
+    [Parameter] public int LeftColSize { get; set; } = 6;
+    private int RightColSize => 12 - LeftColSize;
+}

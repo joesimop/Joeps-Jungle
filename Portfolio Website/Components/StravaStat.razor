@@ -1,0 +1,10 @@
+﻿<div class="flex-column">
+    <span>@Value<strong>&thinsp;@Units</strong></span>
+</div>
+
+@code {
+    [Parameter] public string Stat { get; set; } = string.Empty!;
+    [Parameter] public string Value { get; set; } = string.Empty!;
+    [Parameter] public string Units { get; set; } = string.Empty!;
+    [Parameter] public string Icon { get; set; } = string.Empty!;
+}
