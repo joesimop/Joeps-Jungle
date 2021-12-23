@@ -1,0 +1,25 @@
+﻿
+<Card  @onclick="OnClickCallback" type="button" data-bs-toggle="offcanvas" data-bs-target="#DetailedRun" FooterClass="text-white">
+    <CustomTitle>
+        <h3 class="pb-1">@Activity.Name</h3>
+        <p class="sub-header">@(Conversions.ToDate(Activity.StartDate))</p>
+    </CustomTitle>
+    <Content>
+        <div class="d-flex flex-sm-row justify-content-around">
+            <StravaStat Value="@(Activity.Distance.MetersToMiles().DisplayDouble())" Units="miles" />
+            <StravaStat Value="@(Activity.MovingTime.DisplayTime())" Units="" />
+            <StravaStat Value="@(Conversions.DisplayPace(Activity.MovingTime, Activity.Distance))" Units="min/mi." />
+        </div>
+    </Content>
+
+    <Footer>
+        <div class="d-flex flex-row justify-content-start">
+            <div class="flex-column me-4">
+                <i class="fa fa-thumbs-up fa-lg text-accent"/><strong>&ensp;@Activity.KudosCount</strong>
+            </div>
+            <div class="flex-column me-4">
+                <i class="fa fa-comment fa-lg text-accent"/><strong>&ensp;@Activity.CommentCount</strong>
+            </div>
+        </div>
+    </Footer>
+</Card>

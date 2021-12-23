@@ -1,0 +1,65 @@
+﻿<div class="splits-wrapper">
+    <div class="accordion-header p-2 bold">
+         <span class="inverse-colors">
+              <div class="row">
+                    <div class="col-3">
+                        Mile #
+                    </div>
+
+                    <div class="col-4">
+                        Time
+                    </div>
+                    <div class="col-5">
+                        Split
+                    </div>
+               </div>
+         </span>
+    </div>
+
+    @if (Splits.Any())
+    {
+            <ul class="list-group overflow-y border" style="pointer: none;">
+                 <li class="list-group-item mile-split" @onmouseover="async () => await AddMarker(0)">
+                            <div class="row">
+                                <div class="col-3">
+                                   Start
+                                </div>
+                            </div>
+                  </li>
+                 <li class="list-group-item mile-split"  @onmouseover="async () => await AddMarker(1)">
+                            <div class="row">
+                                <div class="col-3">
+                                    <strong>1</strong>
+                                </div>
+                                <div class="col-4">
+                                    @Splits.ElementAt(0).MovingTime.DisplayMileTime()
+                                </div>
+                                <div class="col-5">
+                                    N/A
+                                </div>
+                            </div>
+                        </li>
+               
+            @for (int index = 1; index < Splits.Count(); index++)
+            {
+                var index2 = index;
+                var splitTime = @Splits.ElementAt(index).MovingTime - @Splits.ElementAt(index - 1).MovingTime;
+                <li class="list-group-item mile-split" @onmouseover="async () => await AddMarker(index2 + 1)">
+                    <div class="row">
+                        <div class="col-3">
+                            <strong>@(index+1)</strong>
+                        </div>
+                        <div class="col-4">
+                            @Splits.ElementAt(index).MovingTime.DisplayMileTime()
+                        </div>
+
+                        <div class="col-5 @(splitTime <=  0 ? "text-primary" : "text-danger")">
+                            @splitTime.DisplayMileTime()
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>
+    }
+</div>
+

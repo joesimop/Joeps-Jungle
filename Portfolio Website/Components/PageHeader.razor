@@ -1,0 +1,11 @@
+﻿<div class="text-end mb-4">
+    <h1>@Title</h1>
+    <p class="text-muted">@SubTitle</p>
+</div>
+
+<hr class="mb-4" />
+
+@code{
+    [Parameter] public string Title { get; init; } = string.Empty!;
+    [Parameter] public string SubTitle { get; init; } = string.Empty!;
+}

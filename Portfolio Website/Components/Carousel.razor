@@ -1,0 +1,28 @@
+﻿
+<div class="row row-cols-1 row-cols-md-2">
+    <div class="col">
+        <h2 class="mb-2">@ImageData[SelectedImage].Item2</h2>
+        <p>@ImageData[SelectedImage].Item3</p>
+    </div>
+
+    <div class="col">
+        <div id="@Id" class="carousel carousel-dark slide" data-bs-interval="false">
+          <div class="carousel-inner">
+            @foreach(var image in ImageData)
+                {
+                    <div class="carousel-item @(ImageData.IndexOf(image) == 0 ? "active" : "") ">
+                      <img src="@image.Item1" class="d-block w-auto" style="height: 25rem;">
+                    </div>
+                }
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#@Id" data-bs-slide="prev" @onclick="PreviousImage">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#@Id" data-bs-slide="next" @onclick="NextImage">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+    </div>
+</div>

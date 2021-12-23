@@ -1,0 +1,18 @@
+﻿@page "/about"
+
+<PageHeader Title="Who am I?"
+            SubTitle="Ah, well you've come to the right place." />
+
+<Carousel ImageData="AboutCarousel" Id="AboutCarousel" />
+
+@code{
+    private List<(string, string, string)> AboutCarousel = new()
+        {
+            ("images/christian.jpg", "A Christian.", "I don't enjoy pushing religion down throats. I do, however, find my identity in Jesus Christ. It informs what I do and what I do not do. I believe the Bible is divinely inspired. I believe that Jesus Christ was fully man and fully God, saving me from my sins. If you want to talk about how I got here, I'd love to."),
+            ("images/running.jpg", "A Runner.", "Running has always served as both a social and emotional outlet for me. I find peace when I run, nothing to do but focus on the task at hand. I experience God as I challenge myself to run through His creation and design."),
+            ("images/whatiliketodo.jpg", "A Prisoner.", "Consistently, I am trapped in discovering the life-giving balance between the outdoors and computers. (Can't miss those Daily Nook Miles.)"),
+            ("images/musicappreciation.jpg", "An Appreciator.", "(of the arts and good food). I love art, in the forms of books and music primarily."),
+            ("images/whatilooklikenow.jpg", "A Switcher-Upper.", "Life is stale at times. I find ways to swtich it up, keep it interesting. I recently shaved my head."),
+        };
+}
+           
