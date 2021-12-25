@@ -9,8 +9,13 @@
 .card {
   top: 0;
   border-color: #14110F;
+  background-color: #3AA680;
   box-shadow: rgba(100, 100, 111, 0.1) 0px 8px 24px;
   transition: top 100ms ease-out, box-shadow 100ms ease-out;
+}
+
+.card-body {
+  background-color: #F09F2D;
 }
 
 .card:hover {
