@@ -1,11 +1,11 @@
 ﻿
-<Card  @onclick="OnClickCallback" type="button" data-bs-toggle="offcanvas" data-bs-target="#DetailedRun" CardClass="w-100" FooterClass="text-white">
+<Card  @onclick="OnClickCallback" type="button" data-bs-toggle="offcanvas" data-bs-target="#DetailedRun" FooterClass="text-white">
     <CustomTitle>
         <h3 class="pb-1">@Activity.Name</h3>
         <p class="sub-header">@(Conversions.ToDate(Activity.StartDate))</p>
     </CustomTitle>
     <Content>
-        <div class="d-flex flex-sm-row justify-content-around">
+        <div class="d-flex flex-row justify-content-around">
             <StravaStat Value="@(Activity.Distance.MetersToMiles().DisplayDouble())" Units="miles" />
             <StravaStat Value="@(Activity.MovingTime.DisplayTime())" Units="" />
             <StravaStat Value="@(Conversions.DisplayPace(Activity.MovingTime, Activity.Distance))" Units="min/mi." />
