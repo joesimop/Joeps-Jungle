@@ -9,13 +9,8 @@
 .card {
     top: 0;
     border-color: $black;
-    background-color:$primary;
     box-shadow: rgba(100, 100, 111, 0.1) 0px 8px 24px;
     transition: top 100ms ease-out, box-shadow 100ms ease-out;
-}
-
-.card-body{
-    background-color: $accent;
 }
 
 .card:hover {
@@ -30,7 +25,6 @@
 }
 
 .list-group-item {
-    background-color: $black;
     border: none;
     animation: fadeInDown 800ms ease-out both;
 
