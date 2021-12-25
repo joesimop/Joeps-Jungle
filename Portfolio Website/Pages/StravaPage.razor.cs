@@ -18,6 +18,8 @@ namespace Portfolio_Website.Pages
 
         private LoadState DataState { get; set; } = LoadState.Loading;
 
+        private LoadState ButtonState { get; set; } = LoadState.Loading;
+
         private DetailedStravaActivity DetailedActivity { get; set; } = new();
 
         DetailedStravaView DetailedStravaView;
@@ -26,19 +28,22 @@ namespace Portfolio_Website.Pages
 
         public async Task GetActivities()
         {
-            this.DataState = LoadState.Loading;
+            this.ButtonState = LoadState.Loading;
             string jsonString = await js.InvokeAsync<string>("GetActivities", this.PageNumber);
             this.activities.AddRange(JsonConvert.DeserializeObject<List<StravaActivity>>(jsonString));
             this.activities = this.activities.Where(a => !a.IsPrivate && a.Type == "Run").ToList();
             this.PageNumber++;
-            this.DataState = LoadState.ValidResults;
-            this.StateHasChanged();
+            this.ButtonState = LoadState.ValidResults;
         }
 
         protected override async Task OnAfterRenderAsync(bool FirstRender)
         {
-            if (FirstRender) { 
+            if (FirstRender) {
+                this.DataState = LoadState.Loading;
                 await this.GetActivities();
+                this.DataState = LoadState.ValidResults;
+                this.StateHasChanged();
+
             }
         }
 
@@ -48,9 +53,6 @@ namespace Portfolio_Website.Pages
             string jsonString = await js.InvokeAsync<string>("GetActivity", activity.Id);
             this.DetailedActivity = JsonConvert.DeserializeObject<DetailedStravaActivity>(jsonString);
             this.DataState = LoadState.ValidResults;
-
-            //Implementing this way because the ParameterAsync was being called multiple times, slowing down preformance
-
             this.StateHasChanged();
         }
 
