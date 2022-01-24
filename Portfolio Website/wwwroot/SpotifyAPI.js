@@ -3,7 +3,7 @@ var client_secret = "a3d58f50770c4bb9bf04a1dab7328562";
 var redirect_uri = "https://localhost:44391/running"
 var Access_Token;
 
-//Note: this is the encoded base64 string. the original is client_id + : + client_secret. Postman genrated it. Just remeber its encoded.
+//Note: this is the encoded base64 string. the original is client_id + : + client_secret. Postman generated it. Just remeber its encoded.
 //Basic ZGJjYmRjMzgzZDc4NGE5Y2EwODc0YjgwMTBhMmZmZWU6YTNkNThmNTA3NzBjNGJiOWJmMDRhMWRhYjczMjg1NjI=
 
 async function GetRefresh_Token(){
