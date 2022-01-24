@@ -1,17 +1,18 @@
 ﻿@page "/projects"
 
-<PageHeader Title="Projects" SubTitle="A place to view the projects I'm most proud of." />
+<PageHeader Title="Projects" SubTitle="A place to view the projects I'm most proud of. Order from newest to oldest." />
 
-<Project Title="Portfolio Website">
+
+<Project Title="Network Packet Sniffer in ANSI C">
     <Description>
-        Using Blazor, C#, and ASP.NET 5, I developed my site for three reasons. One, employers will better understand who I am. Two, my parents have a way to interface with me every day, via my 
-        <NavLink class="link in-text-link" href="/running">running</NavLink> page. And three, I wanted to challenge myself to a project. I learned so much and am excited to continue building the site.
+        This project was inspired by my interest in networks. I never knew how they worked and I wanted to learn! I reverse-engineered the different protocols using Wireshark. Then, using a library called libpcap, I grabbed packets and deciphered the byte data up through the relevant Layer 3 headers. The data is then printed to stdout, and we can see the packet data! I love ANSI C and learning, so this project was stupendously fun.
     </Description>
 </Project>
 
-<Project Title="Hash Table  in C">
+<Project Title="Portfolio Website">
     <Description>
-        As a part of my CPE 357 class, I created an effectivley object oriented implementation of a Hash Table in C. By using dynamic memory allocation and custom structs, the Hash Table uses separate chaining to store data. On creation of the Hash Table, the user has the ability to input their own functions in the case they need custom allocation, deallocation, or hashing for their structs. I provide basic versions of the aformentioned methods for them otherwise.
+        Using Blazor, C#, and ASP.NET Core 3, I developed my site for three reasons. One, employers will better understand who I am. Two, my parents have a way to interface with me every day, via my 
+        <NavLink class="link in-text-link" href="/running">running</NavLink> page. And three, I wanted to challenge myself to a project. I learned so much and am excited to continue building the site.
     </Description>
 </Project>
 
@@ -27,8 +28,8 @@
     </Description>
 </Project>
 
-<Project Title="Network Packet Reading using Libpcap">
+<Project Title="Hash Table  in C">
     <Description>
-        This project was inspired by my interest in networks. I never knew how they worked and I wanted to learn! I reverse-engineered the different protocols using Wireshark. Then, using a library called libpcap, I grabbed packets and deciphered the byte data up through the relevant Layer 3 headers. The data is then printed to stdout, and we can see the packet data! I love ANSI C and learning, so this project was stupendously fun.
+        As a part of my CPE 357 class, I created an effectivley object oriented implementation of a Hash Table in C. By using dynamic memory allocation and custom structs, the Hash Table uses separate chaining to store data. On creation of the Hash Table, the user has the ability to input their own functions in the case they need custom allocation, deallocation, or hashing for their structs. I provide basic versions of the aformentioned methods for them otherwise.
     </Description>
 </Project>
