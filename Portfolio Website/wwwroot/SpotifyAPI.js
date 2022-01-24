@@ -36,8 +36,6 @@ async function AuthorizeSpotify() {
     url += '&scope=' + scope;
     url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
     window.location.href = url;
-
-
 }
 
 
