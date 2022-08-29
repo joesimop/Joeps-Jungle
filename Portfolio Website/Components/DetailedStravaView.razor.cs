@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.Options;
 using Microsoft.JSInterop;
 using Newtonsoft.Json;
 using Portfolio_Website.Data;
@@ -13,6 +14,10 @@ namespace Portfolio_Website.Components
     public partial class DetailedStravaView : ComponentBase
     {
         [Inject] IJSRuntime js { get; set; } = default!;
+
+        [Inject] IOptions<LastFMCredentials> LastFMCredentials { get; init; } = default!;
+
+        [Inject] IOptions<MapBoxCredentials> MapBoxCredentials { get; init; } = default!;
 
         [Parameter] public DetailedStravaActivity Activity { get; set; } = new();
 
@@ -34,6 +39,19 @@ namespace Portfolio_Website.Components
 
         private bool HasSongs => this.Activity.PlayedSongs.TrackList.Tracks.Any();
 
+        protected override async Task OnAfterRenderAsync(bool FirstRender)
+        {
+            if (FirstRender)
+            {
+                await js.InvokeVoidAsync("SetLastFMCredentials",
+                        this.LastFMCredentials.Value.APIKey,
+                        this.LastFMCredentials.Value.SharedSecret);
+
+                await js.InvokeVoidAsync("SetMapBoxCredentials",
+                        this.MapBoxCredentials.Value.AccessToken);
+            }
+        }
+
         protected override async Task OnParametersSetAsync()
         {
             //Keep from reinitialization
@@ -44,7 +62,7 @@ namespace Portfolio_Website.Components
                 await NewActivityInitialization();
                 this.DataState = LoadState.ValidResults;
                 this.StateHasChanged();
-
+                    
                 await this.js.InvokeVoidAsync("mapInit");
 
             }
@@ -96,6 +114,7 @@ namespace Portfolio_Website.Components
                     Name = "No more songs",
                     TimeData = new() { UnixTimeStamp = Double.MaxValue }
                 });
+
                 //In order to calculate the polyline index to the timedata for songs
                 this.ratio = (to - from) / (this.Activity.PolyLineLength - 1);
                 this.BaseTime = from;
