@@ -15,7 +15,7 @@ async function GetActivities(pageNumber) {
     
     if (this.Access_Token != 0) {
 
-        const activies_call = "https://www.strava.com/api/v3/athlete/activities?access_token=" + this.Access_Token + "&page=" + pageNumber + "&per_page=12";
+        const activies_call = "https://www.strava.com/api/v3/athlete/activities?access_token=" + this.Access_Token + "&page=" + pageNumber + "&per_page=9";
         var response = await fetch(activies_call);
         var jsonResponse = await response.json();
         var returnString = await JSON.stringify(jsonResponse);
@@ -40,8 +40,6 @@ async function GetActivity(id) {
 
 async function GetAuthToken() {
     const Refresh_Link = "https://www.strava.com/oauth/token"
-
-    console.log(this.clientSecret);
 
     await fetch(Refresh_Link, {
         method: 'post',
