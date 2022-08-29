@@ -4,6 +4,7 @@ using Portfolio_Website.Data;
 using MongoDB.Bson;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Portfolio_Website.Services;
 
@@ -24,14 +25,19 @@ public class MongoDBService
         await _activitiesCollection.InsertManyAsync(activities);
     }
 
+    public async Task AddActivity(StravaActivity activity)
+    {
+        var Modifiers = new BsonDocument("_id", -1);
+        await _activitiesCollection.InsertOneAsync(activity);
+    }
+
     public async Task<List<StravaActivity>> GetActivties(int pageNumber)
     {
         int index = pageNumber * 9;
 
         var cursor = await _activitiesCollection.FindAsync(x => true);
         var aList = await cursor.ToListAsync();
-        return aList.GetRange(index, 9);
+        return aList.OrderByDescending(x => x.StartDate).ToList().GetRange(index, 9);
 
     }
-    
 }

@@ -34,14 +34,25 @@ namespace Portfolio_Website.Pages
 
         public async Task UpdateBackend()
         {
-            await this.Service.UpdateCollection(this.activities);
+            string jsonString = await js.InvokeAsync<string>("GetActivities", 1);
+            List<StravaActivity> updatedActivites = JsonConvert.DeserializeObject<List<StravaActivity>>(jsonString)
+                                                    .Where(a => !a.IsPrivate && a.Type == "Run").ToList();
+
+            foreach (StravaActivity activity in updatedActivites)
+            {
+                if(!this.activities.Where(x => x.Id == activity.Id).Any())
+                {
+                    await this.Service.AddActivity(activity);
+                    this.activities.Insert(0, activity);
+                }
+            }
         }
 
         public async Task GetActivities()
         {
             this.ButtonState = LoadState.Loading;
             this.activities.AddRange(await this.Service.GetActivties(this.PageNumber - 1));
-            this.activities = this.activities.Where(a => !a.IsPrivate && a.Type == "Run").ToList();
+            await this.UpdateBackend();
             this.PageNumber++;
             this.ButtonState = LoadState.ValidResults;
         }
