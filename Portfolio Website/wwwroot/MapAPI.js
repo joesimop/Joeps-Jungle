@@ -4,10 +4,16 @@ var map;
 var mileMarker;
 var travelMarker;
 
+var AccessToken;
+
+async function SetMapBoxCredentials(accessToken) {
+    this.AccessToken = accessToken;
+}
+
 async function mapInit() {
 
     findCenter(coordinates)
-    mapboxgl.accessToken = 'pk.eyJ1Ijoiam9lc2ltb3A4IiwiYSI6ImNrd2VrYjJweTA1aTgydnA4MXhua216M20ifQ.l9j7V74HdWDkNaSfocC9yg';
+    mapboxgl.accessToken = this.AccessToken;
     map = new mapboxgl.Map({
         container: 'map',
         center: center,

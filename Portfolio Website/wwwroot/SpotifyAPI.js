@@ -1,14 +1,20 @@
-﻿var client_id = "dbcbdc383d784a9ca0874b8010a2ffee";
-var client_secret = "a3d58f50770c4bb9bf04a1dab7328562";
-var redirect_uri = "https://localhost:44391/running"
+﻿var ClientId;
+var ClientSecret;
+var Authorization;
 var Access_Token;
+var redirect_uri = "https://localhost:44391/running"
 
-//Note: this is the encoded base64 string. the original is client_id + : + client_secret. Postman generated it. Just remeber its encoded.
-//Basic ZGJjYmRjMzgzZDc4NGE5Y2EwODc0YjgwMTBhMmZmZWU6YTNkNThmNTA3NzBjNGJiOWJmMDRhMWRhYjczMjg1NjI=
+function SetSpotifyCredentials(clientId, clientSecret, authorizationType) {
+    this.ClientId = clientId;
+    this.ClientSecret = clientSecret;
+    this.Authorization = authorizationType;
+}
+
+//Note: Authorization is the encoded base64 string. the original is ClientId + : + ClientSecret. Postman generated it. Just remeber its encoded.
 
 async function GetRefresh_Token(){
     let myHeaders = new Headers();
-    myHeaders.append("Authorization", "Basic ZGJjYmRjMzgzZDc4NGE5Y2EwODc0YjgwMTBhMmZmZWU6YTNkNThmNTA3NzBjNGJiOWJmMDRhMWRhYjczMjg1NjI=");
+    myHeaders.append("Authorization", this.Authorization);
     myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
     var urlencoded = new URLSearchParams();
@@ -32,7 +38,7 @@ async function AuthorizeSpotify() {
 
     var url = 'https://accounts.spotify.com/authorize';
     url += '?response_type=token';
-    url += '&client_id=' + encodeURIComponent(client_id);
+    url += '&client_id=' + encodeURIComponent(this.ClientId);
     url += '&scope=' + scope;
     url += '&redirect_uri=' + encodeURIComponent(redirect_uri);
     window.location.href = url;

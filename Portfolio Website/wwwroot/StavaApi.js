@@ -1,12 +1,18 @@
-﻿
+﻿var ClientId;
+var ClientSecret;
+var ClientToken;
 this.Access_Token = 0;
 
-
+async function SetStravaCredentials(clientId, clientSecret, clientToken) {
+    this.ClientId = clientId;
+    this.ClientSecret = clientSecret;
+    this.ClientToken = clientToken;
+}
 
 async function GetActivities(pageNumber) {
 
     await GetAuthToken();
-
+    
     if (this.Access_Token != 0) {
 
         const activies_call = "https://www.strava.com/api/v3/athlete/activities?access_token=" + this.Access_Token + "&page=" + pageNumber + "&per_page=12";
@@ -18,8 +24,6 @@ async function GetActivities(pageNumber) {
     return "";
 
 }
-
-
 
 async function GetActivity(id) {
 
@@ -37,6 +41,8 @@ async function GetActivity(id) {
 async function GetAuthToken() {
     const Refresh_Link = "https://www.strava.com/oauth/token"
 
+    console.log(this.clientSecret);
+
     await fetch(Refresh_Link, {
         method: 'post',
         headers: {
@@ -45,9 +51,9 @@ async function GetAuthToken() {
         },
 
         body: JSON.stringify({
-            client_id: '73596',
-            client_secret: 'e0e21c0dc48e6e8b32841e95c63da9d24f68bf2d',
-            refresh_token: '6cae9e3ebc34ca50da8363b9c85431165c215f65',
+            client_id: this.ClientId,
+            client_secret: this.ClientSecret,
+            refresh_token: this.ClientToken,
             grant_type: 'refresh_token'
         })
 

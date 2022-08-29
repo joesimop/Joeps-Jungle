@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Portfolio_Website.Services;
+using Portfolio_Website.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +19,7 @@ namespace Portfolio_Website
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
         }
 
         public IConfiguration Configuration { get; }
@@ -27,6 +30,12 @@ namespace Portfolio_Website
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            services.AddScoped<MongoDBService>();
+            services.Configure<MongoDBSettings>(Configuration.GetSection("MongoDB"));
+            services.Configure<StravaCredentials>(Configuration.GetSection("Strava"));
+            services.Configure<SpotifyCredentials>(Configuration.GetSection("Spotify"));
+            services.Configure<LastFMCredentials>(Configuration.GetSection("LastFM"));
+            services.Configure<MapBoxCredentials>(Configuration.GetSection("MapBox"));
             services.AddSignalR(e => {
                 e.MaximumReceiveMessageSize = 102400000;
             });

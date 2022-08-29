@@ -1,5 +1,10 @@
-﻿var APIKey = "8bfe656eef112e39b95f86b68791c224";
-var SharedSecret = "c47bcc7b350f1606813e2cfc8d69c3ca";
+﻿var APIKey;
+var SharedSecret;
+
+async function SetLastFMCredentials(apiKey, sharedSecret) {
+    this.APIKey = apiKey;
+    this.SharedSecret = sharedSecret;
+}
 
 async function GetPlayedTracksDuringActivity(from, to) {
     const activity_call = "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=joe_simop&api_key=8bfe656eef112e39b95f86b68791c224&format=json&from=" + from + "&to=" + to;

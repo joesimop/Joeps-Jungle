@@ -12,7 +12,7 @@
 
     <Grid DataSource="activities" TItem="StravaActivity" Gutters MaxItemsPerRow="3">
         <CoordinateContent>
-            <ShortStravaActivity Activity="@context" OnClickCallback="() => SetDetailedActivity(context)" />
+            <ShortStravaActivity Activity="@context" OnClickCallback="async () => await SetDetailedActivity(context)" />
         </CoordinateContent>
     </Grid>
 
