@@ -1,18 +1,19 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap');
-$font-stack: 'M PLUS Rounded 1c', sans-serif;
-$font-header: 'Montserrat', sans-serif;
-$white: #FFFFFF;
+﻿@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+$font-stack: 'Nunito', sans-serif;
+$font-header: 'Nunito', sans-serif;
+$white: #EFF1F3;
 $black: #14110F;
-$primary: #3AA680;
-$accent: #F09F2D;
-$danger: #DE3C4B;
-$dark: #1B4B3A; //#0E0F3B;
+$primary: #77be8d;
+$accent: #FC9E4F;
+$danger: #DF2935;
+$dark: #242F36; //#1B4B3A; //#0E0F3B;
 $light: #B4E4D2;
 $loader-height: 3rem;
 $loader-width: 3rem;
 
 
+
+$underline-color: --underlinecolor;
 
 
 

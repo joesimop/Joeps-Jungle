@@ -1,48 +1,34 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap");
+﻿@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 html, body {
   width: 100%;
   height: 100%;
-  font-family: "Montserrat", sans-serif; }
+  font-family: "Nunito", sans-serif; }
 
 body {
-  background-color: #FFFFFF;
-  color: #14110F; }
+  background-color: #242F36;
+  color: #EFF1F3; }
 
 p {
   background-color: inherit;
   color: inherit; }
 
 h1 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-weight: bold;
   font-size: 4rem;
   margin-bottom: 0;
   font-style: italic; }
 
 h2 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: bold;
-  font-size: 1.5rem;
-  font-style: italic; }
-
-.h2 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-weight: bold;
   font-size: 1.5rem;
   font-style: italic; }
 
 h3 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: bold;
-  font-size: 1.25rem;
-  font-style: italic; }
-
-.h3 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: bold;
-  font-size: 1.25rem;
-  font-style: italic; }
+  font-family: "Nunito", sans-serif;
+  font-weight: lighter;
+  font-size: 2rem; }
 
 h4 {
   font-size: 2rem;
@@ -63,7 +49,7 @@ a.active:after {
   transform-origin: bottom left;
   text-decoration: none;
   border-radius: 5px;
-  color: #F09F2D;
+  color: var(--underlinecolor, #B4E4D2);
   transition: transform 0.25s ease-out; }
 
 button {
@@ -81,10 +67,9 @@ button:focus {
 
 img {
   height: inherit;
-  width: 100%;
   border-radius: 2rem;
   object-fit: contain;
   animation: fadeInDown 800ms ease-out both; }
 
 i {
-  color: #3AA680; }
+  color: #77be8d; }

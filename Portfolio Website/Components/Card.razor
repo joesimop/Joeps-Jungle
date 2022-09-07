@@ -1,8 +1,8 @@
 ﻿<div class="card h-100" @attributes="InputAttributes">
 
 
-    <div class="card-header bg-white">
-        <h5>
+    <div class="card-header">
+        <h4>
             @if (CustomTitle == null)
             {
                 @Title
@@ -11,7 +11,7 @@
             {
                 @CustomTitle
             }
-        </h5>
+        </h4>
     </div>
 
     @if (Content is not null)

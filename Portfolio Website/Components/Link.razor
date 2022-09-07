@@ -1,9 +1,35 @@
-﻿<a class="link" @attributes="InputAttributes">@Text</a>
+﻿<a class="
+    link 
+    @(IsActive ? "active" : "")
+    @(IsInline ? "in-text-link": "")
+    "
+    @ref="link"
+    @onmouseover="async () => await ChangeBackgroundColor()"  
+    @attributes="InputAttributes">
+    @ChildContent
+</a>
 
 @code {
 
-    [Parameter] public string Text { get; set; } = string.Empty!;
+    [Inject] IJSRuntime js { get; set; } = default!;
+
+    [Inject] NavigationManager nm { get; set; } = default!;
+
+    [Parameter] public RenderFragment ChildContent { get; set; } = default!;
+
+    [Parameter] public bool IsInline { get; init; } = false;
 
     [Parameter(CaptureUnmatchedValues = true)]
     public Dictionary<string, object> InputAttributes{ get; set; }
+
+    public bool IsActive => InputAttributes.GetValueOrDefault("href").ToString() ==
+                        '/' + nm.ToBaseRelativePath(this.nm.Uri);
+
+    ElementReference link;
+
+    public async Task ChangeBackgroundColor()
+    {
+        await this.js.InvokeVoidAsync("ChangeBackgroundColor", link);
     }
+
+}

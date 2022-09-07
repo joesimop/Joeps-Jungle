@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>Portfolio_Website</RootNamespace>
+    <UserSecretsId>efbfd8cf-b182-49e9-875c-7e0cc7147b5c</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

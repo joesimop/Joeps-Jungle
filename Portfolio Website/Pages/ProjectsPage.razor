@@ -1,35 +1,45 @@
 ﻿@page "/projects"
 
-<PageHeader Title="Projects" SubTitle="A place to view the projects I'm most proud of. Order from newest to oldest." />
+<PageHeader Title="Projects" SubTitle="A place to view a few of my project; ordered from newest to oldest." />
 
+<div class="d-flex justify-content-around flex-wrap">
 
-<Project Title="Network Packet Sniffer in ANSI C">
-    <Description>
-        This project was inspired by my interest in networks. I never knew how they worked and I wanted to learn! I reverse-engineered the different protocols using Wireshark. Then, using a library called libpcap, I grabbed packets and deciphered the byte data up through the relevant Layer 3 headers. The data is then printed to stdout, and we can see the packet data! I love ANSI C and learning, so this project was stupendously fun.
-    </Description>
-</Project>
+    <Project NODE REACT MONGODB Title="PolyPage">
+        <Description>
+            Developing in a team of five, PolyPage was made to act as a custom homepage with the quick access to your daily needs. Specific contributions include: Mobile backend calls, mobile design, tile movement and initilization, tile inheritance, and more.
+        </Description>
+    </Project>
 
-<Project Title="Portfolio Website">
-    <Description>
-        Using Blazor, C#, and ASP.NET Core 3, I developed my site for three reasons. One, employers will better understand who I am. Two, my parents have a way to interface with me every day, via my 
-        <NavLink class="link in-text-link" href="/running">running</NavLink> page. And three, I wanted to challenge myself to a project. I learned so much and am excited to continue building the site.
-    </Description>
-</Project>
+    <Project C Title="HTTP Web Server">
+        <Description>
+            An HTTP webserver written in C that uses poll() (nonblocking) and sockets.h to return json, text/plain, and html documents from specific locations on a server for multiple clients at once.
+        </Description>
+    </Project>
 
-<Project Title="Frequency Band Analyzer">
-    <Description>
-        Using an ESP32, a MSGEQ7 (frequency analyzer), FastLED (LED Strip Interface Library) and some C++ code, I wrote a RGB LED Animation Framework that reacts to music. The Animation class takes an array of LED strips as inputs, along-side other reactivity variables, and dynamically animates separate LED strips, to music, on the fly. I will get a video of them working soon, currently cleaning up the code and structure of the program.
-    </Description>
-</Project>
+    <Project C Title="Network Packet Sniffer">
+        <Description>
+            Using a library called libpcap, I grabbed packets and deciphered the byte data up through the relevant Layer 3 headers. The data is then printed to stdout, and we can see the packet data! I used Wireshark to learn about protocol conventions.
+        </Description>
+    </Project>
 
-<Project Title="LZW Compression in C">
-    <Description>
-        Using bit-packing, a trie data structure, and clever table creation invented by Lempel, Ziv, and Welch, (hence LZW!), this project allowed for an optimized LZW Compression algorithm. In order to do that, bit packing was used for close to maximum data compression and a trie data structure allowed for maximum speed of table manipulation. Due to the nature of LZW, there would be a lot of lookups and insertions happening in the table so minimizing the time it took to undergo those tasks was key, which was achieved through the trie struct. On top of this, we were allocating memory to the heap that we needed to keep track of. Awesome project.
-    </Description>
-</Project>
+    <Project NET CSHARP BLAZOR MONGODB Title="Portfolio Website">
+        <Description>
+            Using Blazor, C#, and ASP.NET Core 6, I developed a full stack website for practice, a way to stay organized, and to keep daily track of my runs via my <NavLink href="/running">running</NavLink> page.
+        </Description>
+    </Project>
 
-<Project Title="Hash Table  in C">
-    <Description>
-        As a part of my CPE 357 class, I created an effectivley object oriented implementation of a Hash Table in C. By using dynamic memory allocation and custom structs, the Hash Table uses separate chaining to store data. On creation of the Hash Table, the user has the ability to input their own functions in the case they need custom allocation, deallocation, or hashing for their structs. I provide basic versions of the aformentioned methods for them otherwise.
-    </Description>
-</Project>
+    <Project CPLUSPLUS Title="Frequency Band Analyzer">
+        <Description>
+            Using an ESP32, a MSGEQ7 (frequency analyzer), FastLED (LED Strip Interface Library), and some C++ code, this RGB LED Animation Framework reacts to music, animates multiple LED strips in sync, dynamically updates animations in real time, and supports userdefined animations.
+        </Description>
+    </Project>
+
+    <Project C Title="LZW Compression in C">
+        <Description>
+            An implementation of a lossless data compression algorithm written in C.
+        </Description>
+    </Project>
+
+    
+
+</div>
