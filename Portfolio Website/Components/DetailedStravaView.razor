@@ -8,7 +8,7 @@
         </div>
         <h4 class="d-inline">@Activity.Name</h4>
         </div>
-        <div class="p-3 h-100"  style="overflow-y: auto;">
+        <div class="p-3 h-100 text-dark"  style="overflow-y: auto;">
             <div class="col-md-9">
                 <div class="w-100">
                     @(string.IsNullOrEmpty(Activity.Description) ? "No Description" : Activity.Description)
@@ -20,35 +20,35 @@
                 <div class="col align-items-center d-flex">
                     <div class="row row-cols-1 row-cols-md-2 gy-4">
 
-                            <div class="col h2">
+                            <h2 class="col">
                                 <i class="fa fa-calendar-alt fa-lg pe-1" />
                         @(Activity.StartDate.ToString("MM/dd/yyyy"))
-                            </div>
+                            </h2>
 
-                            <div class="col h2">
+                            <h2 class="col">
                                 <i class="fa fa-map-pin fa-lg pe-1" />
                         @(Activity.Distance.MetersToMiles().DisplayDouble()) miles
-                            </div>
+                            </h2>
 
-                            <div class="col h2">
+                            <h2 class="col">
                                 <i class="fa fa-stopwatch fa-lg pe-1" />
                         @(Activity.MovingTime.DisplayTime())
-                            </div>
+                            </h2>
 
-                            <div class="col h2">
+                            <h2 class="col">
                                 <i class="fa fa-tachometer fa-lg pe-1" />
                         @(Conversions.DisplayPace(Activity.MovingTime, Activity.Distance)) min/mi.
-                            </div>
+                            </h2>
 
-                            <div class="col h2">
+                            <h2 class="col">
                                 <i class="fa fa-mountain fa-lg pe-1" />
                         @(Activity.ElevatoinGain) ft.
-                            </div>
+                            </h2>
 
-                            <div class="col h2">
+                            <h2 class="col">
                                 <i class="fa fa-fire-alt fa-lg pe-1" />
                         @(Activity.Calories) calories
-                            </div>
+                            </h2>
                         </div>
                 </div>
 

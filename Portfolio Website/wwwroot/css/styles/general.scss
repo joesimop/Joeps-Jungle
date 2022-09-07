@@ -45,9 +45,20 @@
     background-color: $black !important
 }
 
+.text-light {
+    color: $light !important;
+}
+
+.text-white{
+    color: $white!important;
+}
 
 .bg-accent {
     background-color: $accent !important
+}
+
+.bg-white{
+    background-color: $white!important;
 }
 
 .text-white {
@@ -59,22 +70,23 @@
     background-color: $black;
 }
 
-.border-white{
+.border-white {
     border-color: $white;
 }
 
-.border-dark{
+.border-dark {
     border-color: $dark !important;
 }
 
 .project-border {
-    border-bottom: solid;
-    border-left: solid;
+    border: solid;
     border-color: $primary;
     border-radius: 5px;
     border-width: thick;
     height: min-content;
-    margin: -3px;
+    width: 25rem;
+    margin-bottom: 1.5rem;
+    background-color: $light;
 }
 
 .center {
@@ -83,6 +95,10 @@
     margin-right: auto;
 }
 
+.floored {
+    bottom: 0px;
+    position: absolute;
+}
 
 .circle-border {
     border-radius: 50%;
@@ -118,6 +134,7 @@
     font-weight: bold;
     color: $primary;
     font-style: italic;
+    background-color: inherit !important;
 }
 
 .in-text-link:hover {
@@ -128,9 +145,10 @@
     color: #6c757d !important;
     font-family: $font-header;
     font-size: 1rem;
+    margin: 0;
 }
 
-.link:after {
+a:after {
     content: '';
     position: absolute;
     width: 100%;
@@ -138,17 +156,18 @@
     height: 0.25rem;
     bottom: 0;
     left: 0;
-    background-color: $accent;
+    background-color: var($underline-color, $accent);
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
     border-radius: 5px;
 }
 
-.link:hover:after {
+a:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
     text-decoration: none;
     border-radius: 5px;
+    background-color: var($underline-color, $accent);
 }
 
 
@@ -162,6 +181,11 @@
 .icon:hover {
     color: $primary;
     transition: transform 0.25s ease-out;
+}
+
+.project-icon{
+    height: 1.75rem;
+    margin-right: 1.5rem;
 }
 
 .mile-split:hover {
@@ -201,4 +225,9 @@
     &::before {
         animation-delay: -0.5s;
     }
+}
+
+.splits-wrapper{
+    border-width: medium;
+    border-color: $dark;
 }

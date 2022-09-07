@@ -1,14 +1,13 @@
 ﻿@import "definitions.scss";
 
 .accordion-header {
-    background-color: $dark;
-    color: $accent;
-    width: 100%;
+    color: $dark;
 }
 
 .card {
     top: 0;
-    border-color: $black;
+    border-width: medium;
+    border-color: $white;
     box-shadow: rgba(100, 100, 111, 0.1) 0px 8px 24px;
     transition: top 100ms ease-out, box-shadow 100ms ease-out;
 }
@@ -20,6 +19,15 @@
     cursor: pointer;
 }
 
+.card-header{
+    color: $dark;
+    background-color: $white;
+}
+
+.card-body{
+    background-color: $white;
+}
+
 .card-footer {
     background-color: $dark;
 }
@@ -27,7 +35,7 @@
 .list-group-item {
     border: none;
     animation: fadeInDown 800ms ease-out both;
-
+    background-color: $dark;
 
     @for $i from 1 through 30 {
         &:nth-child(#{$i}) {
@@ -46,6 +54,7 @@
     background-color: $white;
     background-image: none !important;
     width: 12rem !important;
+    box-shadow: 0 .5rem 1rem rgba($black, .15);
 }
 
 @media (min-width: 992px){

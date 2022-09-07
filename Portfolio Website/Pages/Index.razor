@@ -1,25 +1,15 @@
 ﻿@page "/"
 
-<Split VerticallyAlign LeftColSize="7">
-    <Left>
-        <h1 class="text-dark mb-4">Hey, name's Joe.</h1>
-        <p>
-            I'm a full-stack developer studying Computer Science and Math at Cal Poly.
-            Feel free to check out my 
-            <NavLink class="link in-text-link" href="/running">running</NavLink>
-            page, a way to give my parents daily updates of my life while attending school.
-            Recruiters, you might take a technical interest in the page as well. Otherwise, if you're asking, 
-            "<NavLink class="link in-text-link" href="/about">Who is this guy?</NavLink>", you know where to look.
-            My <NavLink class="link in-text-link" href="/projects">projects</NavLink> are fun too, if you're into tech-y things.
-        </p>
-
-        <p>Please be nice to bugs, they never did anything to you.</p>
-
-        <p class="text-accent italicized">
-            Note, this site is in perpetual development and I try to maintain it's apparent completeness. Currently working on caching to minimize API calls and my music page.
-        </p>
-    </Left>
-    <Right>
-        <img src="images/profileCircleCropped.jpg" class="circle-border" style="max-height: 20rem;">
-    </Right>
-</Split>
+<div class="w-75 ms-4">
+    <h1 class="text-accent mb-4">Hey, name's Joe.</h1>
+    <h3>
+        I'm a full-stack developer studying Computer Science and Math at Cal Poly.
+        Feel free to check out my
+        <Link IsInline class="link in-text-link" href="/running">running</Link>
+        page, a way to give my parents daily updates of my life while attending school.
+        Recruiters, you might take a technical interest in the page as well. Otherwise, if you're asking,
+        "<Link IsInline class="link in-text-link" href="/about">Who is this guy?</Link>", you know where to look.
+        My <Link IsInline class="link in-text-link" href="/projects">projects</Link> are fun too, if you're into tech-y things.
+    </h3>
+</div>
+<p class="float-end floored text-accent">Please be nice to bugs, they never did anything to you.</p>

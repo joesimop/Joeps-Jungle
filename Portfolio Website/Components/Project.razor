@@ -1,19 +1,69 @@
-﻿<div class="project-border mb-3">
-    <Accordion Id="@Id">
-        <Trigger>
-            @Title
-        </Trigger>
-        <Extra>
-            @if (HasGithub)
-            {
-                <a href="@GitLink" class="fa fa-github fa-2x text-accent float-end"></a>
-            }
-        </Extra>
-    </Accordion>
+﻿<div class="project-border">
+    <h2 class="bg-dark p-3 m-0 rounded-bottom">@Title</h2>
 
-
-    <AccordionContent Id="@Id">
+    <div class="text-center bg-white text-dark p-3 rounded-bottom">
         @Description
-    </AccordionContent>
+    </div>
+
+    <div class="p-2">
+
+        @if (C)
+        {
+            <img class="project-icon" src="@C_Image" />
+        }
+        @if (NET)
+        {
+            <img class="project-icon" src="@NET_Image" />
+        }
+        @if (CSHARP)
+        {
+            <img class="project-icon" src="@CSharp_Image" />
+        }
+        @if (BLAZOR)
+        {
+            <img class="project-icon" src="@Blazor_Image" />
+        }
+        @if (NODE)
+        {
+            <img class="project-icon" src="@Node_Image" />
+        }
+        @if (REACT)
+        {
+            <img class="project-icon" src="@React_Image" />
+        }
+        @if (MONGODB)
+        {
+            <img class="project-icon" src="@MongoDb_Image" />
+        }
+        @if (CPLUSPLUS)
+        {
+            <img class="project-icon" src="@CPlusPlus_Image" />
+        }
+        @if (HasGithub)
+        {
+            <a href="@GitLink" class="fa fa-github fa-2x text-dark float-end"></a>
+        }
+
+    </div>
 </div>
 
+
+@code {
+    [Parameter] public bool C { get; init; } = false;
+    [Parameter] public bool NET { get; init; } = false;
+    [Parameter] public bool CSHARP { get; init; } = false;
+    [Parameter] public bool BLAZOR { get; init; } = false;
+    [Parameter] public bool NODE { get; init; } = false;
+    [Parameter] public bool REACT { get; init; } = false;
+    [Parameter] public bool MONGODB { get; init; } = false;
+    [Parameter] public bool CPLUSPLUS { get; init; } = false;
+
+    private string C_Image = "https://upload.wikimedia.org/wikipedia/commons/1/18/C_Programming_Language.svg";
+    private string NET_Image = "https://upload.wikimedia.org/wikipedia/commons/7/7d/Microsoft_.NET_logo.svg";
+    private string CSharp_Image = "https://upload.wikimedia.org/wikipedia/commons/0/0d/C_Sharp_wordmark.svg";
+    private string Blazor_Image = "https://cdn.worldvectorlogo.com/logos/blazor.svg";
+    private string Node_Image = "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg";
+    private string React_Image = "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg";
+    private string MongoDb_Image = "https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg";
+    private string CPlusPlus_Image = "https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg";
+}

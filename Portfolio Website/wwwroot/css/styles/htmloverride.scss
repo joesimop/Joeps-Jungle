@@ -1,4 +1,4 @@
-﻿@import "./definitions";
+﻿@import "definitions.scss";
 
 html, body {
     width: 100%;
@@ -7,8 +7,8 @@ html, body {
 }
 
 body {
-    background-color: $white;
-    color: $black;
+    background-color: $dark;
+    color: $white;
 }
 
 p {
@@ -32,25 +32,10 @@ h2 {
     font-style: italic;
 }
 
-.h2 {
-    font-family: $font-header;
-    font-weight: bold;
-    font-size: 1.5rem;
-    font-style: italic;
-}
-
 h3 {
     font-family: $font-header;
-    font-weight: bold;
-    font-size: 1.25rem;
-    font-style: italic;
-}
-
-.h3 {
-    font-family: $font-header;
-    font-weight: bold;
-    font-size: 1.25rem;
-    font-style: italic;
+    font-weight: lighter;
+    font-size: 2rem;
 }
 
 h4 {
@@ -75,7 +60,7 @@ a.active:after {
     transform-origin: bottom left;
     text-decoration: none;
     border-radius: 5px;
-    color: $accent;
+    color: var($underline-color, $light);
     transition: transform 0.25s ease-out;
 }
 
@@ -96,7 +81,6 @@ button:focus {
 
 img {
     height: inherit;
-    width: 100%;
     border-radius: 2rem;
     object-fit: contain;
     animation: fadeInDown 800ms ease-out both;

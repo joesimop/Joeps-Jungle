@@ -1,7 +1,7 @@
 ﻿
 <Card  @onclick="OnClickCallback" style="cursor: pointer;" data-bs-toggle="offcanvas" data-bs-target="#DetailedRun" FooterClass="text-white">
     <CustomTitle>
-        <h3 class="pb-1">@Activity.Name</h3>
+        <h2>@Activity.Name</h2>
         <p class="sub-header">@(Conversions.ToDate(Activity.StartDate))</p>
     </CustomTitle>
     <Content>
